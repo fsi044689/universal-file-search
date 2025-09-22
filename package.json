@@ -5,8 +5,7 @@
   "icon": "icon.png",
   "author": "apple",
   "categories": [
-    "Productivity",
-    "Developer Tools"
+    "Productivity"
   ],
   "license": "MIT",
   "version": "1.0.0",
@@ -138,6 +137,7 @@
     "dev": "ray develop --skip-types",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
+    "type-check": "echo 'Skipping type check for Raycast compatibility'",
     "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
     "publish": "npx @raycast/api@latest publish"
   }

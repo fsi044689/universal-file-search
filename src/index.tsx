@@ -14,7 +14,14 @@ import { SearchMode } from "./types";
 import { homedir } from "os";
 
 export default function SearchFiles() {
-  const preferences = getPreferenceValues<Preferences>();
+  const preferences = getPreferenceValues<{
+    maxDepth: string;
+    showHiddenFiles: boolean;
+    excludePatterns: string;
+    customSearchPaths?: string;
+    defaultSearchScope?: string;
+    defaultSearchMode?: SearchMode;
+  }>();
   const [searchText, setSearchText] = useState("");
   const [searchScope, setSearchScope] = useState<string>(
     preferences.defaultSearchScope || "home",

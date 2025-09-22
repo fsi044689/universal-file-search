@@ -10,7 +10,14 @@ export function useFdSearch(
   searchScope: string,
   searchMode: SearchMode,
 ) {
-  const preferences = getPreferenceValues<Preferences>();
+  const preferences = getPreferenceValues<{
+    maxDepth: string;
+    showHiddenFiles: boolean;
+    excludePatterns: string;
+    customSearchPaths?: string;
+    defaultSearchScope?: string;
+    defaultSearchMode?: SearchMode;
+  }>();
   const [manualTrigger, setManualTrigger] = useState(0);
   const [hasSearchedOnce, setHasSearchedOnce] = useState(false);
   const [isSearching, setIsSearching] = useState(false);

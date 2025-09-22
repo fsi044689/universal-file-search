@@ -7,6 +7,7 @@
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "noErrorTruncation": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -14,8 +15,10 @@
     "declaration": false,
     "outDir": "./dist",
     "noImplicitAny": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "noImplicitReturns": false,
+    "exactOptionalPropertyTypes": false
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "raycast-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

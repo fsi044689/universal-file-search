@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "strict": false,
+    "strictNullChecks": false,
+    "noImplicitReturns": false,
+    "exactOptionalPropertyTypes": false,
+    "noErrorTruncation": true
+  },
+  "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.spec.*"]
+}
