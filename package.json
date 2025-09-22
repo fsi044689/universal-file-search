@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "author": "apple",
   "categories": [
-    "Productivity"
+    "Other"
   ],
   "license": "MIT",
   "version": "1.0.0",
@@ -134,7 +134,7 @@
   },
   "scripts": {
     "build": "ray build --skip-types",
-    "dev": "ray develop --skip-types",
+    "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
     "type-check": "echo 'Skipping type check for Raycast compatibility'",
