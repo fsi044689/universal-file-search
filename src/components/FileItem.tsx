@@ -119,14 +119,14 @@ export function FileItem({
   };
 
   const smartApps = file.isDirectory ? [] : getSmartOpenOptions();
-  // �����(�>:
+  // Format file size in human readable format
   const home = homedir();
   const displayPath = file.path.startsWith(home)
     ? file.path.replace(home, "~")
     : file.path;
   const directory = dirname(displayPath);
 
-  // <��'
+  // Format file size
   const formatSize = (bytes: number) => {
     if (bytes === 0) return "0 B";
     const k = 1024;
@@ -135,7 +135,7 @@ export function FileItem({
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
-  // <�
+  // Format relative date
   const formatDate = (date: Date) => {
     const now = new Date();
     const diff = now.getTime() - date.getTime();
@@ -149,28 +149,28 @@ export function FileItem({
     return `${Math.floor(days / 365)} years ago`;
   };
 
-  // �և��
+  // Get file icon based on extension
   const getIcon = () => {
     if (file.isDirectory) return Icon.Folder;
 
     const ext = file.extension.toLowerCase();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const iconMap: Record<string, any> = {
-      // �c
+      // Documents
       pdf: Icon.Document,
       doc: Icon.Document,
       docx: Icon.Document,
       txt: Icon.Text,
       md: Icon.Text,
 
-      // �G
+      // Images
       png: Icon.Image,
       jpg: Icon.Image,
       jpeg: Icon.Image,
       gif: Icon.Image,
       svg: Icon.Image,
 
-      // �
+      // Code files
       js: Icon.Code,
       ts: Icon.Code,
       jsx: Icon.Code,
@@ -182,19 +182,19 @@ export function FileItem({
       h: Icon.Code,
       swift: Icon.Code,
 
-      // �)��
+      // Archives
       zip: Icon.Download,
       tar: Icon.Download,
       gz: Icon.Download,
       rar: Icon.Download,
 
-      // Ƒ
+      // Videos
       mp4: Icon.Video,
       mov: Icon.Video,
       avi: Icon.Video,
       mkv: Icon.Video,
 
-      // �
+      // Audio
       mp3: Icon.Microphone,
       wav: Icon.Microphone,
       flac: Icon.Microphone,
